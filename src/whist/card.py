@@ -18,7 +18,7 @@ class Card:
     values = ["None", "None", "2", "3", "4", "5", "6", "7", "8", "9", "10", "None", "Jack", "Queen", "King", "Ace"]
 
     def __init__(self, v, s):
-        if v < 2 or v > 14 or v == 11:
+        if v < 2 or v > 15 or v == 11:
             raise ValueError("Invalid card value")
         if s < 0 or s > 3:
             raise ValueError("Invalid suit index")

@@ -13,16 +13,16 @@ class TestCard(unittest.TestCase):
 
         # Test the boundaries
         card_low = Card(2, 0)  # Minimum valid value
-        card_high = Card(14, 3)  # Maximum valid value
+        card_high = Card(15, 3)  # Maximum valid value
         self.assertEqual(card_low.value, 2)
-        self.assertEqual(card_high.value, 14)
+        self.assertEqual(card_high.value, 15)
 
     def test_invalid_card_creation(self):
         """Test card creation with invalid inputs raises errors"""
         with self.assertRaises(ValueError):
             Card(1, 0)  # Invalid value
         with self.assertRaises(ValueError):
-            Card(15, 0)  # Invalid value
+            Card(16, 0)  # Invalid value
         with self.assertRaises(ValueError):
             Card(11, 2)  # Invalid value
         with self.assertRaises(ValueError):

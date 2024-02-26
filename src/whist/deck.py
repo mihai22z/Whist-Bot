@@ -1,4 +1,4 @@
-from card import Card
+from .card import Card
 from random import shuffle
 
 
@@ -27,7 +27,7 @@ class Deck:
         self.trump_card = None
         if players < 3 or players > 6:
             raise ValueError("Invalid number of players")
-        self.cards = [Card(i, j) for i in range(2, 15) if i != 11 for j in range(4)]
+        self.cards = [Card(i, j) for i in range(3 + (6 - players) * 2, 16) if i != 11 for j in range(4)]
         shuffle(self.cards)
 
     def set_trump(self):
