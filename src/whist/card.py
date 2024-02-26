@@ -1,0 +1,39 @@
+class Card:
+    suits = ["hearts",
+             "spades",
+             "diamonds",
+             "clubs"]
+
+    # First two elements have the value None so that each card value corresponds to the values tuple index
+    values = ["None", "None", "2",
+              "3", "4", "5", "6",
+              "7", "8", "9", "10",
+              "Jack", "Queen",
+              "King", "Ace"]
+
+    def __init__(self, v, s):
+        # value and suit are ints
+        if v < 2 or v > 14:
+            raise ValueError("Invalid card value")
+        if s < 0 or s > 3:
+            raise ValueError("Invalid card value")
+        self.value = v
+        self.suit = s
+
+    def __lt__(self, c2):
+        if self.value < c2.value:
+            return True
+        else:
+            return False
+
+    def __gt__(self, c2):
+        if self.value > c2.value:
+            return True
+        else:
+            return False
+
+    def __eq__(self, c2):
+        return self.value == c2.value and self.suit == c2.suit
+
+    def __repr__(self):
+        return f"{self.values[self.value]} of {self.suits[self.suit]}"
