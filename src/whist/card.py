@@ -1,19 +1,20 @@
 class Card:
-    suits = ["hearts",
-             "spades",
-             "diamonds",
-             "clubs"]
+    suits = ["Hearts",
+             "Spades",
+             "Diamonds",
+             "Clubs"]
 
-    # First two elements have the value None so that each card value corresponds to the values tuple index
+    # First two elements, have the value None so that each card value corresponds to the values tuple index
+    # Same applies for 11, since it is not part of the Whist game
     values = ["None", "None", "2",
               "3", "4", "5", "6",
               "7", "8", "9", "10",
-              "Jack", "Queen",
+              "None", "Jack", "Queen",
               "King", "Ace"]
 
     def __init__(self, v, s):
         # value and suit are ints
-        if v < 2 or v > 14:
+        if v < 2 or v > 14 or v == 11:
             raise ValueError("Invalid card value")
         if s < 0 or s > 3:
             raise ValueError("Invalid card value")
