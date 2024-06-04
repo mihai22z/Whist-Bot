@@ -13,21 +13,21 @@ class Deck:
         cards (list of Card): The list of cards in the deck.
     """
 
-    def __init__(self, players):
+    def __init__(self, num_players):
         """
         Initializes the deck with cards appropriate for the number of players.
 
         Parameters:
-            players (int): The number of players playing the game.
+            num_players (int): The number of players playing the game.
 
         Raises:
             ValueError: If the number of players is not between 3 and 6 (inclusive).
         """
         self.trump = None
         self.trump_card = None
-        if players < 3 or players > 6:
+        if num_players < 3 or num_players > 6:
             raise ValueError("Invalid number of players")
-        self.cards = [Card(i, j) for i in range(3 + (6 - players) * 2, 16) if i != 11 for j in range(4)]
+        self.cards = [Card(i, j) for i in range(3 + (6 - num_players) * 2, 16) if i != 11 for j in range(4)]
         shuffle(self.cards)
 
     def set_trump(self):

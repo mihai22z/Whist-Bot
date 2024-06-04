@@ -7,12 +7,12 @@ class TestDeck(unittest.TestCase):
     def test_deck_creation(self):
         """Test deck creation with valid inputs"""
         # Initialize a deck
-        players = 4
-        deck = Deck(players)
+        num_players = 4
+        deck = Deck(num_players)
 
         # Generate the expected list of cards for the same number of players
         expected_deck = []
-        for i in range(3 + (6 - players) * 2, 16):
+        for i in range(3 + (6 - num_players) * 2, 16):
             for j in range(4):
                 if i != 11:
                     expected_deck.append(Card(i,j))
